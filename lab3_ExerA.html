@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Bakery Online Order</title>
+</head>
+<body>
+
+    <!-- 1. Header Section -->
+    <div id="header">
+        <h1>Campus Bakery&reg;
+        <span> - Freshly Baked, Happily Ever After!</span>
+        </h1>
+        <p>Your favourite bakery treats, delivered to your doorstep!</p>
+    </div>
+
+    <!-- 2. Navigation Section -->
+    <div id="nav">
+            <a href="#header">Home</a> |
+            <a href="#content">Order Now</a> |
+            <a href="#sidebar">Price List</a> |
+            <a href="#footer">Contact Us</a>
+    </div>
+
+    <!-- 3. Main Content Section -->
+        <div id="content">
+            <h2>Welcome to Campus Bakery Online Order!</h2>
+            <p>Welcome to <strong>Campus Bakery</strong>! Explore our <em>delicious range of baked goods,</em> from classic pastries to custom cakes. Enjoy our <span>affordable  prices</span> and <a href="#sidebar">view our price list</a> before ordering.</p>
+
+            <h2>Our Special Offers</h2>
+            <ul>
+                <li>Buy 1 Get 1 Free on all muffins every Monday!</li>
+                <li>20% off on all custom cake orders placed before 5 PM.</li>
+                <li>Free delivery for orders above $50.</li>
+            </ul>
+
+            <!-- 4. Order Form Section -->
+            <div id="orderform">
+                <h2>Place Your Order</h2>
+                <form action="submit_order.php" method="post"
+                    oninput="totalPrice.value = (cupcakes.value * 3.00) + (slices.value * 5.50)">
+
+                    <!-- Customer Details -->
+                     <fieldset>
+                        <legend>Customer Details</legend>  
+    
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder = "Please enter your full name" required autofocus><br><br>
+
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder = "Please enter your phone number" required><br><br>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder = "Please enter your email address" required><br><br>
+                     </fieldset>
+                     
+                     <br>
+
+                     <!-- Pick-up Details -->
+                     <fieldset>
+                        <legend>Pick-up Details</legend>
+                        <label for="date">Pick-up Date:</label>
+                        <input type="date" id="date" name="date" required><br><br>
+
+                        <label for="time">Pick-up Time:</label>
+                        <input type="time" id="time" name="time" required><br><br>
+                     </fieldset>
+
+                        <br>
+                     <!-- Product Selection -->
+                      <fieldset>
+                        <legend>Product Selection</legend>  
+                        <label for="flavour">Choose Flavour:</label>
+                        <input list="flavour" id="flavour" name="flavour" placeholder="Select a flavour" required>
+                        <datalist id="flavour">
+                            <option value="Chocolate">
+                            <option value="Vanilla">
+                            <option value="Strawberry">
+                            <option value="Blueberry">
+                            <option value="Red Velvet">
+                            <option value="Carrot Cake">
+                            <option value="Lemon">
+                        </datalist>
+                    <br><br>
+
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+                    <label for="icing">Icing Colour:</label>
+                    <input type="color" id="icing" name="icing" placeholder="Select an icing option" ><br><br>
+                    <label for="sweetness">Sweetness Level (1-5):</label>
+                    <input type="range" id="sweetness" name="sweetness" min="1" max="5" step="1" value="3" ><br><br>
+                  </fieldset>
+
+                  <br>
+
+                  <!-- 5. Price Calculation -->
+                   <fieldset>
+                    <legend>Order Quantity & Price Calculation</legend>
+                    <label for="cupcakes">Cupcakes (RM 3.00 each):</label>
+                    <input type="number" id="cupcakes" name="cupcakes" min="0" value="0" required><br><br>
+                    <label for="slices">Cake Slices (RM 5.50 each slice):</label>
+                    <input type="number" id="slices" name="slices" min="0" value="0" required><br><br>
+
+                    <label>Total Price (RM):</label>
+                    <output name="totalPrice" for="cupcakes slices">0.00</output>
+                  </fieldset>
+
+                  <br>
+
+                  <!-- Submit Button -->
+                    <input type="submit" value="Submit Order">
+                    <input type="reset" value="Reset Form">
+                </form>
+            </div>
+        </div>
+
+        <!-- 6. Sidebar Section: Price List -->
+           <div id="sidebar">
+            <h2>Price List</h2>
+            <ul>
+                <li>Cupcakes: RM&nbsp;3.00 each</li>
+                <li>Cake Slices: RM&nbsp;5.50 each slice</li>
+                <li>Custom Cakes: Starting from RM&nbsp;35.00</li>
+            </ul>
+       
+        <p> 
+            Special Offers: Orders &gt; 5 pieces receive a 10% discount!
+        </p>
+    </div>
+
+    <!-- 7. Footer Section -->
+    <div id="footer">
+        
+        <p>
+            &copy; 2026 Campus Bakery. All rights reserved.
+        </p>
+        <p>Contact Us: info@campusbakery.com</p>
+        <p>For inquiries, please reach out to us:</p>
+        <p>Thank you for choosing Campus Bakery!</p>
+    </div>
+     
+</body>
+</html>
